@@ -1,8 +1,9 @@
 <?php
-/ Paksa CodeIgniter mengenali HTTPS dari Railway Proxy
+// Paksa CodeIgniter mengenali HTTPS dari Railway Proxy
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
     $_SERVER['HTTPS'] = 'on';
 }
+
 /**
  * CodeIgniter
  *
@@ -66,29 +67,29 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
  */
 switch (ENVIRONMENT)
 {
-    case 'development':
-        // Sembunyikan Warning/Notice (seperti session header warning), namun tetap tampilkan Error Fatal
-        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
-        ini_set('display_errors', 1);
-    break;
+	case 'development':
+		// Sembunyikan Warning/Notice (seperti session header warning), namun tetap tampilkan Error Fatal
+		error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
+		ini_set('display_errors', 1);
+	break;
 
-    case 'testing':
-    case 'production':
-        ini_set('display_errors', 0);
-        if (version_compare(PHP_VERSION, '5.3', '>='))
-        {
-            error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-        }
-        else
-        {
-            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-        }
-    break;
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>=') )
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+		}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
 
-    default:
-        header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-        echo 'The application environment is not set correctly.';
-        exit(1); // EXIT_ERROR
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
 }
 
 /*
@@ -153,20 +154,20 @@ switch (ENVIRONMENT)
  *
  * Un-comment the $routing array below to use this feature
  */
-	// The directory name, relative to the "controllers" directory.  Leave blank
+	// The directory name, relative to the "controllers" directory. Leave blank
 	// if your controller is not in a sub-directory within the "controllers" one
 	// $routing['directory'] = '';
 
-	// The controller class file name.  Example:  mycontroller
+	// The controller class file name. Example: mycontroller
 	// $routing['controller'] = '';
 
 	// The controller function you wish to be called.
-	// $routing['function']	= '';
+	// $routing['function'] = '';
 
 
 /*
  * -------------------------------------------------------------------
- *  CUSTOM CONFIG VALUES
+ * CUSTOM CONFIG VALUES
  * -------------------------------------------------------------------
  *
  * The $assign_to_config array below will be passed dynamically to the
@@ -183,12 +184,12 @@ switch (ENVIRONMENT)
 
 
 // --------------------------------------------------------------------
-// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// END OF USER CONFIGURABLE SETTINGS. DO NOT EDIT BELOW THIS LINE
 // --------------------------------------------------------------------
 
 /*
  * ---------------------------------------------------------------
- *  Resolve the system path for increased reliability
+ * Resolve the system path for increased reliability
  * ---------------------------------------------------------------
  */
 
@@ -222,7 +223,7 @@ switch (ENVIRONMENT)
 
 /*
  * -------------------------------------------------------------------
- *  Now that we know the path, set the main path constants
+ * Now that we know the path, set the main path constants
  * -------------------------------------------------------------------
  */
 	// The name of THIS file
