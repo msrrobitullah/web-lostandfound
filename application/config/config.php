@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |--------------------------------------------------------------------------
 */
 
-$config['base_url'] = 'http://localhost/lostandfound_unuja/';
+$config['base_url'] = 'http://web-lostandfound-production.up.railway.app/';
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';
