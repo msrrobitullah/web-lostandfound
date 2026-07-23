@@ -7,7 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |--------------------------------------------------------------------------
 */
 
+// 1. Ubah base_url menjadi https
 $config['base_url'] = 'https://web-lostandfound-production.up.railway.app/';
+
+// 2. Pastikan proxy_ips diaktifkan agar CI percaya headers dari Railway
+$config['proxy_ips'] = '*';
 $config['index_page'] = '';
 $config['uri_protocol'] = 'REQUEST_URI';
 $config['url_suffix'] = '';
