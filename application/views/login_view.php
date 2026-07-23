@@ -85,7 +85,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="<?php echo site_url('login/proses'); ?>" method="post" autocomplete="off">
+        <form action="/login/proses" method="post" autocomplete="off">
             <div class="form-group">
                 <label for="username">Nomor Induk / NIM</label>
                 <input type="text" name="username" id="username" required placeholder="Masukkan nomor induk anda">
@@ -98,7 +98,7 @@
 
             <button type="submit" class="btn-login">Masuk ke Dashboard</button>
         </form>
-        <a href="<?php echo base_url(); ?>" class="btn-back">&larr; Kembali ke Beranda</a>
+        <a href="/" class="btn-back">&larr; Kembali ke Beranda</a>
     </div>
 
 </body>
